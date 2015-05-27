@@ -13,9 +13,4 @@ class VotersControllerTest < ActionController::TestCase
     assert_equal "Johnny", Voter.last.name
   end
 
-  test "voter has show" do
-    get :show
-    assert_response :success
-  end
-
 end
