@@ -13,4 +13,8 @@ class VotersController < ApplicationController
     end
   end
 
+  def show
+    render json: Voter.find_by_id(params[:id])
+  end
+
 end
