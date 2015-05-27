@@ -5,4 +5,12 @@ class VotersControllerTest < ActionController::TestCase
     get :index
     assert_response :success
   end
+
+  test "create voter" do
+    assert_difference("Voter.count") do
+      post :create, {name: "Johnny", party: "Democrat"}
+    end
+    assert_equal "Johnny", Voter.last.name
+  end
+
 end
