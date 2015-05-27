@@ -16,7 +16,7 @@ class VoterTest < ActiveSupport::TestCase
     scotts_vote = Vote.create(voter_id: scott.id, candidate_id: jim.id)
     josephs_vote = Vote.create(voter_id: joseph.id, candidate_id: jim.id)
 
-    assert_equal scotts_vote, scott.vote
-    assert_equal josephs_vote, joseph.vote
+    assert_equal [scotts_vote], scott.votes
+    assert_equal [josephs_vote], joseph.votes
   end
 end

@@ -12,13 +12,14 @@ class VoteTest < ActiveSupport::TestCase
   end
 
   def test_voter_has_one_vote
-    scott = Voter.create(name: "Scott", party: "Democrat")
-    jim = Candidate.create(name: "Jim", hometown: "Lexington, MS", district: "four", party: "Democrat")
-    neil = Candidate.create(name: "Neal", hometown: "Lexington, MS", district: "four", party: "Republican")
-    scotts_vote = Vote.create(voter_id: scott.id, candidate_id: jim.id)
-    null_vote = Vote.create(voter_id: scott.id, candidate_id: neil.id)
+    scott = Voter.create!(name: "Scott", party: "Democrat")
+    jim = Candidate.create!(name: "Jim", hometown: "Lexington, MS", district: "four", party: "Democrat")
+    neil = Candidate.create!(name: "Neal", hometown: "Lexington, MS", district: "four", party: "Republican")
+    scotts_vote = Vote.create!(voter_id: scott.id, candidate_id: jim.id)
 
-    assert scotts_vote.save
-    refute null_vote.save
+    assert_raises(ActiveRecord::RecordInvalid) do
+      null_vote = Vote.create!(voter_id: scott.id, candidate_id: neil.id)
+    end
+    
   end
 end
