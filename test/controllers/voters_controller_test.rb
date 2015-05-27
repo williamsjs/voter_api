@@ -6,7 +6,7 @@ class VotersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "create voter" do
+  test "voter has create action" do
     assert_difference("Voter.count") do
       post :create, {name: "Johnny", party: "Democrat"}
     end
