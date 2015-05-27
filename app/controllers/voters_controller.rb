@@ -13,6 +13,16 @@ class VotersController < ApplicationController
     end
   end
 
+  def update
+    voter = Voter.find_by_id(params[:id])
+    if params[:name]
+      voter.update(name: params[:name])
+    elsif params[:party]
+      voter.update(party: params[:party])
+    end
+    render json: voter
+  end
+
   def show
     render json: Voter.find_by_id(params[:id])
   end

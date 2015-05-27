@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class VotersControllerTest < ActionController::TestCase
-  test "voter has index" do
+  test "voter has index action" do
     get :index
     assert_response :success
   end
@@ -11,6 +11,13 @@ class VotersControllerTest < ActionController::TestCase
       post :create, {name: "Johnny", party: "Democrat"}
     end
     assert_equal "Johnny", Voter.last.name
+  end
+
+  test "voter has update action" do
+    voter = Voter.create(name: "Joe", party: "rep")
+    voter_before_updated_name = voter.name
+    patch :update, {name: "William"}
+    assert_not_equal voter.name, voter_before_updated_name
   end
 
 end

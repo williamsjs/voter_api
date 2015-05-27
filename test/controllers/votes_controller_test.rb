@@ -14,4 +14,10 @@ class VotesControllerTest < ActionController::TestCase
     assert_equal 3, Vote.last.voter_id
   end
 
+  # test "votes have destroy action" do
+  #   my_vote = Vote.new(voter_id: 1, candidate_id: 1)
+  #   my_vote.save!
+  #
+  # end
+
 end

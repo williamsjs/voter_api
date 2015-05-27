@@ -13,4 +13,8 @@ class VotesController < ApplicationController
     end
   end
 
+  def destroy
+    render json: Vote.find_by_id(id: params[:id]).destroy
+  end
+
 end

@@ -4,9 +4,11 @@ Rails.application.routes.draw do
   get 'candidates/show'
   get 'voters/index'
   post 'voters/create'
+  patch 'voters/update'
   get 'voters/show'
   get 'votes/index'
   post 'votes/create'
+  delete 'votes/destroy'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
