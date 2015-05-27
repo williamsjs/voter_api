@@ -4,4 +4,8 @@ class CandidatesController < ApplicationController
     render json: Candidate.all
   end
 
+  def show
+    render json: Candidate.find_by_id(params[:id])
+  end
+
 end
