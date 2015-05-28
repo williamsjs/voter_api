@@ -1,5 +1,4 @@
 class VotersController < ApplicationController
-  before_filter :restrict_access
 
   def index
     render json: Voter.all
@@ -27,12 +26,6 @@ class VotersController < ApplicationController
 
   def show
     render json: Voter.find_by_id(params[:id])
-  end
-
-  private def restrict_access
-    authenticate_on_request_with_http_token do |token, options|
-      ApiKey.exists?(access_token: token)
-    end
   end
 
 end
