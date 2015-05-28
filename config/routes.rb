@@ -10,9 +10,7 @@ Rails.application.routes.draw do
   post 'votes/create'
   delete 'votes/destroy'
 
-  resources :voters, path: 'api/v1/voters'
-  resources :votes, path: 'api/v1/votes'
-  resources :candidates, path: 'api/v1/candidates'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

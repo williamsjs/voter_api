@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  occured_at: 2015-05-27 22:32:29
+
+two:
+  name: MyString
+  occured_at: 2015-05-27 22:32:29
