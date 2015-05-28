@@ -14,13 +14,10 @@ class VotersControllerTest < ActionController::TestCase
   end
 
   test "voter has update action" do
-    # voter = Voter.new(name: "Joe", party: "rep")
-    # voter.save!
-    # voter_before_updated_name = voter.name
-    # patch :update, {name: "William"}
-    # assert_not_equal voter.name, voter_before_updated_name
-    patch :update
-    assert_response :success
+    voter = Voter.new(name: "Joe", party: "rep")
+    voter.save
+    patch :update, voter: {"name" => "jimmy"}
+    assert_equals "jimmy", voter.name
   end
 
 end
