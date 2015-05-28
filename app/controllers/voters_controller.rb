@@ -1,3 +1,4 @@
+
 class VotersController < ApplicationController
 
   def index
